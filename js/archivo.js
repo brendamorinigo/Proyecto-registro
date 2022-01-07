@@ -1,28 +1,23 @@
-/* var usuario= prompt("Ingrese su nombre")
-let saludo = alert ("Hola! "+ usuario + " bienvenido)
- */
-
-
-/* CONDICIONALES */
-/* let numero = 10;
-
-if (numero==10){
-    console.log("el numero es diez")
+let incognita=27;
+do {
+let pregunta= prompt("Te animas a adivinar que numero estoy pensando?").toUpperCase()
+if(pregunta=="NO"){
+    alert("Dale, no seas anti.")
+    incognita===27
 }
-else{
-    console.log( "el numero no es diez")
-} */
-
-let nombre= prompt("Ingre se su nombre");
-let edad= prompt("Ingrese su edad");
-
-if (edad < 18){
-    alert('Hola '+ nombre + ' puedes tomar solo bebidas sin alcohol.')
-}
-else if (edad >=18){
-alert ('Hola ' + nombre +' podes ponertela en la pera, ya sos mayor.')
-}
-
-else{
-    alert( 'No ah ingresado un dato')
-}
+if(pregunta=="SI"){
+    let numeroIngresado= Number(prompt("El numero que estoy pensando esta entre 0 y 50, cual crees que es?"))
+if(numeroIngresado<10){
+alert("Segui subiendo estas lejos.")
+}else if(numeroIngresado<=20){
+    alert("Segui subiendo te vas acercando.")
+}else if(numeroIngresado <27){
+    alert("CERCA CERCA.")
+}else if(numeroIngresado===27)
+alert("Excelente, lo adivinaste")
+else if(numeroIngresado>=28){
+    alert("Te pasaste.")
+}else{
+    alert("Ingresa el dato solicitado.")
+}}
+} while (incognita);
