@@ -1,24 +1,28 @@
-let continuarViaje= true;
-let nafta=10;
+let totalConIva;
+let cantidadDeCuotas;
+let totalCuotas;
 
-  do {
-    let preguntarSeguir= prompt(`Tienes ${nafta}ltrs de nafta, quieres seguir el viaje?`).toLocaleUpperCase();
-    if(preguntarSeguir=='NO'){
-        if(nafta > 9){
-            console.log("Te queda bastante aun.")
-            continuarViaje=false
-        }
-        if(nafta < 9){
-            console.log("Te quedan menos de 9ltrs")
-            continuarViaje=false
-        }
-        if(nafta==0) {
-            console.log("Vas a tener que empujar")
-            continuarViaje=false
-        }
+let precioProducto= Number(prompt("Ingrese el valor del producto"));
+
+function calcularIva(precio){
+    let tipoDeResposable= prompt("Que tipo de responsable es? 1-Inscripto  2-Consumidor final")  
+    if(tipoDeResposable == 1){
+        totalConIva= precioProducto * 0.40 + precioProducto;        
+    }else if(tipoDeResposable==2){
+        totalConIva= precioProducto * 0.59 + precioProducto;
     }
-    else if(preguntarSeguir=="SI"){
-        nafta--;
-        console.log(`Te quedan ${nafta}ltrs`)
+}
+
+function calcularCuotas(cuotas){
+    let cantidadDeCuotas=prompt("Ingrese la cantidad de cuotas (maximo 12)")
+    if(cantidadDeCuotas<=12){
+        totalCuotas= totalConIva/cantidadDeCuotas;
+        alert(`El total es de ${totalConIva} pesos, en ${cantidadDeCuotas} cuotas de ${totalCuotas}`)
     }
-     } while (continuarViaje);
+    else{
+        alert("El maximo permitido es 12 cuotas")
+    }   
+}
+
+calcularIva();
+calcularCuotas();
