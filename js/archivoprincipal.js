@@ -14,7 +14,7 @@ function calcularIva(precio){
 }
 
 function calcularCuotas(cuotas){
-    let cantidadDeCuotas=prompt("Ingrese la cantidad de cuotas (maximo 12)")
+    let cantidadDeCuotas=Number(prompt("Ingrese la cantidad de cuotas (maximo 12)")) 
     if(cantidadDeCuotas<=12){
         totalCuotas= totalConIva/cantidadDeCuotas;
         alert(`El total es de ${totalConIva} pesos, en ${cantidadDeCuotas} cuotas de ${totalCuotas}`)
