@@ -1,25 +1,14 @@
-let cantidad;
-let cantidadDeIngrediente;
-let precio;
-let ingrediente;
-let precioIngrediente;
+/* array de objetos */
 
-function datosIngresados(){
-ingrediente= prompt ("Ingrese el nombre del ingrediente");
-precio= Number(prompt("Ingrese el precio por kilo"));
-cantidad= Number(prompt("Ingrese la cantidad a utilizar en grs"));
-cantidadTotal(cantidad, precio)
-resultado(cantidad, ingrediente, precioIngrediente);
-}
+const bici1= new DatosBici("philco", "amarillo", 29, "once")
+const bici2= new DatosBici("slp", "negra", 27, "berisso" )
+const bici3= new DatosBici("venzo", "blanco", 29, "la plata")
+const bici4= new DatosBici("lince", "blanco", 27.5, "quilmes" )
 
-function cantidadTotal(cantidad, precio) {
-precioIngrediente= cantidad*precio/1000;
-console.log(precioIngrediente);
-}
-
-function resultado(cantidad, ingrediente, precioIngrediente){
-alert(`El precio por ${cantidad}grs de ${ingrediente} es de $${precioIngrediente} pesos .`)
-}
+const bicicletas= [];
+bicicletas.push(bici1, bici2, bici3, bici4);
+let datoIngresado= prompt("ingrese la marca")
+const buscarMarca= bicicletas.filter((bici)=>bici.marca== datoIngresado );
+console.log(buscarMarca);
 
 
- datosIngresados();

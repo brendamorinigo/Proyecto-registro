@@ -33,3 +33,107 @@ let nafta=10;
     }
     } while (continuarViaje);
 
+    /* funciones */
+
+    let totalConIva;
+    let cantidadDeCuotas;
+    let totalCuotas;
+    
+    let precioProducto= Number(prompt("Ingrese el valor del producto"));
+    
+    function calcularIva(precio){
+        let tipoDeResposable= prompt("Que tipo de responsable es? 1-Inscripto  2-Consumidor final")  
+        if(tipoDeResposable == 1){
+            totalConIva= precioProducto * 0.40 + precioProducto;        
+        }else if(tipoDeResposable==2){
+            totalConIva= precioProducto * 0.59 + precioProducto;
+        }
+    }
+    
+    function calcularCuotas(cuotas){
+        let cantidadDeCuotas=Number(prompt("Ingrese la cantidad de cuotas (maximo 12)")) 
+        if(cantidadDeCuotas<=12){
+            totalCuotas= totalConIva/cantidadDeCuotas;
+            alert(`El total es de ${totalConIva} pesos, en ${cantidadDeCuotas} cuotas de ${totalCuotas}`)
+        }
+        else{
+            alert("El maximo permitido es 12 cuotas")
+        }   
+    }
+    
+    calcularIva();
+    calcularCuotas();
+    
+    /* objetos */
+    
+    /* array    */
+    
+    let paises =[ "francia", "argentina", "bolivia", "brasil"]
+    let provincias=["bsas", "cordoba", "mendoza"]
+    let juntarArray= paises.concat(provincias)  /* concatena los array */
+    let paisesPorVisitar= paises.slice(0,3)
+    console.log(paisesPorVisitar) 
+    
+    /* function cuotas (total){
+        totalCuotas= total/cantidadDeCuotas;
+    }
+    
+    function productoConIva(producto){
+        
+    } */
+    
+    let total;
+    let tipoImpuesto;
+    let precio;
+    
+    function datosIngresados(){
+    precio= Number(prompt("Ingrese el precio"))
+    tipoImpuesto= prompt("Ingrese si desa iva 21% o 10%")
+    iva(precio);
+    }
+    
+    function iva(precio) {
+    if(tipoImpuesto=21){
+            total= precio*2.1+precio;
+        }
+    else if(tipoImpuesto==10){
+            total=precio*0.1+precio;
+        }
+    else{
+         alert("Debe seleccionar tipo de IVA")
+        }
+    imprimirDatos(total);
+    }
+    
+    function imprimirDatos(total){
+    alert(`El total con iva es $${total}`)
+    }
+    
+    datosIngresados();
+    
+    
+    /* calcular producto */
+    let cantidad;
+    let cantidadDeIngrediente;
+    let precio;
+    let ingrediente;
+    let precioIngrediente;
+    
+    function datosIngresados(){
+    ingrediente= prompt ("Ingrese el nombre del ingrediente");
+    precio= Number(prompt("Ingrese el precio por kilo"));
+    cantidad= Number(prompt("Ingrese la cantidad a utilizar en grs"));
+    cantidadTotal(cantidad, precio)
+    resultado(cantidad, ingrediente, precioIngrediente);
+    }
+    
+    function cantidadTotal(cantidad, precio) {
+    precioIngrediente= cantidad*precio/1000;
+    }
+    
+    function resultado(cantidad, ingrediente, precioIngrediente){
+    alert(`El precio por ${cantidad}grs de ${ingrediente} es de $${precioIngrediente} pesos .`)
+    }
+    
+    
+     datosIngresados();    
