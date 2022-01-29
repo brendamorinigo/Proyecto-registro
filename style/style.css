@@ -32,6 +32,12 @@ a:hover{
     padding: 4px;
 }
 
+.container-resultado{
+    width: auto;
+    height: auto;
+    margin: 10px;
+}
+
 /* esta propiedad es par aplicar en query
 .tituloh .containerh3{
 display: grid;

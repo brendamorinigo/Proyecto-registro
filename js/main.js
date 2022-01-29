@@ -10,24 +10,48 @@ let buscarBici;
 
 /* DOM */
 const btnBuscador= document.getElementById("btn");
-const seccionResultado= document.querySelector("#resultadobuscador");
+const seccionResultado= document.querySelector(".resultado");
 
 /* ARRAY */
 const bicicletas= [];
 bicicletas.push(bici1, bici2, bici3, bici4, bici5, bici6);
 
 /* Funciones */
-btnBuscador.addEventListener("click", () => {
-
+btnBuscador.addEventListener("click", () => { 
   var input = document.getElementById("buscador");
   valor = input.value;
+  alert(valor);
 });
 
-function buscador(palabraclave){
-    buscarBici= bicicletas.filter((bici)=>bici.marca== valor);    
-    }
+function imprimirProductos(array){
+    array.forEach(cadaItem => {
+        let div =document.createElement("div")
+        div.classList.add("containerRes")
+        div.innerHTML += `
+        <p>${cadaItem.marca} </p>
+        <p>${cadaItem.color}</p>
+        <p>${cadaItem.rodado}</p>`
+        seccionResultado.appendChild(div)
 
+    });
+}
+imprimirProductos(bicicletas);
+
+
+/* for(let resultado of bicicletas){
+    let div= document.createElement("div");
+    div.innerHTML= 
+    `<p>${resultado.marca} </p>
+     <p>${resultado.color} </p>
+     <p>${resultado.rodado}</p>`
+     seccionResultado.appendChild(div)
+} */
+
+
+/* function buscador(palabraclave){
+    buscarBici= bicicletas.filter((bici)=>bici.marca== valor); 
+    }
+ */
 
 /* LLAMADA A FUNCIONES */
-buscador(valor);
 
