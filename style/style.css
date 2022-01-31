@@ -38,6 +38,26 @@ a:hover{
     margin: 10px;
 }
 
+.container-select{
+    margin: 0 auto;
+    width: 80%;
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.tituloFiltrar{
+    margin: 20px;
+}
+.collapse{
+    justify-content: end;
+}
+
+.resultado{
+    display: flex;
+}
+.card {
+    margin: 10px;
+}
 /* esta propiedad es par aplicar en query
 .tituloh .containerh3{
 display: grid;

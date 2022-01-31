@@ -18,9 +18,6 @@
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarScroll">
-                <form class="d-flex">
-                  <input class="form-control me-2" type="search" placeholder="Buscar..." aria-label="Search" id="buscador">
-                  <button class="btn btn-outline-success" id="btn" type="submit" >Buscar</button>
                   <a class="navbar-brand link principal" href="./index.html">Iniciar sesion</a>
                   <a class="navbar-brand link" href="./index.html">Registrarse</a>
                   <a class="navbar-brand link" href="./index.html">Consultas</a>
@@ -29,13 +26,23 @@
             </div>
           </nav>
     </header>
-    
-<section id="container-resultado" class="container-buscador">
+     
+    <h4 class="tituloFiltrar">Filtrar por:</h4> 
+    <div class="container-select" id="select">
 
-</section>
+      <select class="form-select" aria-label="Default select example" id="selectMarca">
+        <option value="VENZO">VENZO</option>
+        <option value="LINCE">LINCE</option>
+        <option value="SLP">SLP</option>
+      </select>
+    </div>
+
+<div id="container-resultado" class="resultado">
+
+</div> 
 <main>
   <div id="resultadoBuscador" class="container-resultado">
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis cumque neque officiis consequatur est fugit, recusandae nesciunt et nisi nulla iusto optio cum fuga quis voluptates, porro voluptatum velit ut!</p>
+    
   </div>
         <div class="titulo">
                 <h1>Registra tu bici en 3 simples pasos</h1>
@@ -55,8 +62,8 @@
 </body>
 </html>
 
-<table class="cinereousTable">
 
 
 
-<p></p>
+
+
