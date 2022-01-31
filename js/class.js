@@ -6,14 +6,3 @@ class DatosBici{
         this.ubicacion=ubicacion
     }
 }
-
-class DatosUsuario{
-    constructor(nombre, apellido, dni, correo, telefono){
-        this.nombre= nombre;
-        this.apellido=apellido;
-        this.dni=dni;
-        this.correo=correo;
-        this.telefono=telefono;
-    }
-}
-

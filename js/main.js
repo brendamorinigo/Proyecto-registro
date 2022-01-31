@@ -27,7 +27,7 @@ bicicletas.push(bici1, bici2, bici3, bici4, bici5, bici6);
 
 
 function imprimirProductos(array){
-    const seccionResultado= document.querySelector("#container-resultado");
+    const seccionResultado= document.querySelector("#resultadoBuscador");
     seccionResultado.innerHTML=""
     array.forEach(cadaItem => {
         let div =document.createElement("div")

@@ -33,9 +33,12 @@ a:hover{
 }
 
 .container-resultado{
-    width: auto;
-    height: auto;
     margin: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+
 }
 
 .container-select{
