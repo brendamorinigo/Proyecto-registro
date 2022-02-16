@@ -18,7 +18,7 @@
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarScroll">
-                  <a class="navbar-brand link principal" href="./index.html">Iniciar sesion</a>
+                  <a class="navbar-brand link principal" href="./inicioSesion.html">Iniciar sesion</a>
                   <a class="navbar-brand link" href="./index.html">Registrarse</a>
                   <a class="navbar-brand link" href="./index.html">Consultas</a>
                 </form>
@@ -31,30 +31,30 @@
     <div class="container-select" id="select">
 
       <select class="form-select" aria-label="Default select example" id="selectMarca">
+        <option value="TODO">Ver todo</option>
         <option value="VENZO">VENZO</option>
         <option value="LINCE">LINCE</option>
         <option value="SLP">SLP</option>
+        <option value="PHILCO">PHILCO</option>
       </select>
-      <select class="form-select" aria-label="Default select example" id="selectMarca">
+      <select class="form-select" aria-label="Default select example" id="selectColor">
         <option value="BLANCO">BLANCO</option>
         <option value="AMARILLO">AMARILLO</option>
         <option value="NEGRO">NEGRO</option>
       </select>
-      <select class="form-select" aria-label="Default select example" id="selectMarca">
+      <select class="form-select" aria-label="Default select example" id="selectRodado">
         <option value="venzo">29</option>
         <option value="Raleig">27.5</option>
         <option value="slp">26</option>
       </select>
     </div>
 
-<div id="container-resultado" class="resultado">
-</div> 
 <main>
   <div id="resultadoBuscador" class="container-resultado">
     
   </div>
-        <div class="titulo">
-                <h1>Registra tu bici en 3 simples pasos</h1>
+        <div class="titulo" id="titulo-Principal">
+            <h1 class="tituloH1">Registra tu bici en 3 simples pasos</h1>    
         </div> 
         <div class="tituloh">
             <div class="containerh3"><h3>Crea tu cuenta</h3> <p>No te preocupes los datos que te pediremos a continuacion son confidenciales, solo tu con tu usuario tendras acceso a ellos</p></div>
@@ -63,10 +63,26 @@
         </div>
 </main>
 
+<div class="datos-ingresados">
+  <form action="">
+    <div class="datos">
+      <label for="marca-ingresada">Marca</label>
+      <input type="text" id="marca-ingresada" name="marca-ingresada">
+      <label for="color-ingresado" >color</label>
+      <input type="text" id="color-ingresado" name="color-ingresado">
+      <label for="rodado-ingresado">Rodado</label>
+      <input type="text" id="rodado-ingresado" name="rodado-ingresado">
+      <label for="ubicacion-ingresada">Ubicacion</label>
+      <input type="text" id="ubicacion-ingresada" name="ubicacion-ingresada">
+      <input type="submit" value="Cargar datos" id="btn-cargar">
+    </div>
+  </form>
 
+</div>
 
-
-<script src="./js/class.js">  </script> 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="./js/datos-bici.js">  </script> 
+<script src="./js/animaciones.js">  </script>
 <script src="./js/main.js">  </script>
 </body>
 </html>

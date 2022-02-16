@@ -1,33 +1,54 @@
 /* VARIABLES */
 const bici1= new DatosBici("PHILCO", "AMARIILO", 29, "ONCE")
-const bici2= new DatosBici("SLP", "NEGRO", 27, "BERISSO")
-const bici3= new DatosBici("VENZO", "BLANCO", 29, "LA PLATA")
-const bici4= new DatosBici("LINCE", "GRIS", 27.5, "ROMERO" )
-const bici5= new DatosBici("RALEIGH", "VERDE", 27.5, "QUILMES" )
-const bici6= new DatosBici("KAWASAKI", "BLANCO", 29, "LA PLATA" )
 
 /* DOM */
+const seccionResultado= document.querySelector("#resultadoBuscador");
 const selectMarca= document.querySelector(".form-select");
+const selectColor= document.querySelector("#selectColor");
+const selectRodado= document.querySelector("#selectRodado");
+const form= document.querySelector("#form");
+const mostrarTodo= document.querySelector("#todo");
+const btnAñadir= document.querySelector("#btn-cargar")
+btnAñadir.addEventListener('click', cargarDatos)
+
+/* eventos */
 
 selectMarca.addEventListener('change', ()=>{
-    console.log(selectMarca.value)
-    if(selectMarca.value == 'todo'){
-        imprimirProductos(bicicletas);
-    }
-    else{
-        imprimirProductos(bicicletas.filter(elemento=> elemento.marca==selectMarca.value))
-    }
+  if(selectMarca.value=='TODO'){
+    imprimirProductos(bicicletas)
+  } 
+  else{
+    imprimirProductos(bicicletas.filter(elemento=> elemento.marca==selectMarca.value))
+  } 
+})
+
+selectColor.addEventListener('change', ()=>{
+  imprimirProductos(bicicletas.filter(elemento=>elemento.color== selectColor.value))
+})
+
+selectRodado.addEventListener('change', ()=>{
+  imprimirProductos(bicicletas.filter(elemento=>elemento.rodado== selectRodado.value))
 })
 
 /* ARRAY */
 const bicicletas= [];
-bicicletas.push(bici1, bici2, bici3, bici4, bici5, bici6);
+bicicletas.push(bici1);
 
 /* Funciones */
+function cargarDatos(e){
+  e.preventDefault()
+  let marcaIngresada= document.querySelector("#marca-ingresada").value;
+  let colorIngresado= document.querySelector("#color-ingresado").value;
+  let rodadoIngresado= document.querySelector("#rodado-ingresado").value;
+  let ubicacionIngresada= document.querySelector("#ubicacion-ingresada").value;
 
+  const nuevoRegistro= new DatosBici(marcaIngresada,colorIngresado,rodadoIngresado,ubicacionIngresada)
+  bicicletas.push(nuevoRegistro)
+  imprimirProductos(bicicletas)
+}
 
 function imprimirProductos(array){
-    const seccionResultado= document.querySelector("#resultadoBuscador");
+    
     seccionResultado.innerHTML=""
     array.forEach(cadaItem => {
         let div =document.createElement("div")
@@ -50,7 +71,3 @@ function imprimirProductos(array){
 }
 
 imprimirProductos(bicicletas);
-
-
-
-
