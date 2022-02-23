@@ -1,7 +1,5 @@
-/* VARIABLES */
+/* DOM/ VARIABLES*/
 const bici1= new DatosBici("PHILCO", "AMARIILO", 29, "ONCE")
-
-/* DOM */
 const seccionResultado= document.querySelector("#resultadoBuscador");
 const selectMarca= document.querySelector(".form-select");
 const selectColor= document.querySelector("#selectColor");
@@ -9,9 +7,9 @@ const selectRodado= document.querySelector("#selectRodado");
 const form= document.querySelector("#form");
 const mostrarTodo= document.querySelector("#todo");
 const btnAñadir= document.querySelector("#btn-cargar")
-btnAñadir.addEventListener('click', cargarDatos)
 
 /* eventos */
+btnAñadir.addEventListener('click', cargarDatos)
 
 selectMarca.addEventListener('change', ()=>{
   if(selectMarca.value=='TODO'){
@@ -48,7 +46,6 @@ function cargarDatos(e){
 }
 
 function imprimirProductos(array){
-    
     seccionResultado.innerHTML=""
     array.forEach(cadaItem => {
         let div =document.createElement("div")
@@ -71,3 +68,23 @@ function imprimirProductos(array){
 }
 
 imprimirProductos(bicicletas);
+
+/* AJAX */
+
+const URL= "http://api.weatherunlocked.com/api/current/ar.M5500HKA?lang=es&app_id=21da7596&app_key=e07917f396cb606b9370a612aba1cce4"
+
+$("body").prepend('<button id="btn1" class="btn-clima">Traer datos</button>');
+
+$("#btn1").click(()=>{
+    $.get(URL, function (respuesta, estado){
+        let dato= respuesta;
+          console.log(respuesta)
+          $("body").prepend(`<div class="clima">
+           <h3 class="titulo-clima">Temperatura actual: ${dato.temp_c}°C</h3>
+           <h3 class="titulo-clima">Humedad actual: ${dato.humid_pct}%</h3>
+           </div>`)
+    })
+}) 
+
+
+

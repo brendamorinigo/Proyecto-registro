@@ -76,3 +76,17 @@ a:hover{
 input:hover{
     background-color: rgb(236, 234, 243);
 }
+
+.clima{
+    display:flex;
+}
+.titulo-clima{
+    margin: 10px;
+    background-color: rgb(203, 236, 236);
+    padding: 5px;
+    font-size: 15px;
+}
+.btn-clima{
+    display: flex;
+    margin-left: 10px;
+}

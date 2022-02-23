@@ -6,3 +6,4 @@ class DatosBici{
         this.ubicacion=ubicacion
     }
 }
+
