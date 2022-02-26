@@ -1,18 +1,16 @@
-const form = document.querySelector("form")
-const button= document.querySelector("button")
+const button= document.querySelector("#btn-IniciarSesion")
+const btnRegistro= document.querySelector("#btn-Registrarse")
 let uCuit=""
 let uContrasenia=""
-let nombreRegistro= document.querySelector("#nombre-registro");
-let cuitRegistro= document.querySelector("#cuit-registro");
-let apellidoRegistro=document.querySelector("#apellido-registro")
-let correoRegistro=document.querySelector("#correo-registro");
+/* variables de registro */
 
-const arrayDatos= [
-    {nombre: "ADRIAN", cuit:27401858151, pass:"185815bdm"},
-    {nombre: "ALESSIO", cuit:271658154, pass:"5698asdfgk"}
-]
+/* variable warning */
+let warning= document.querySelector("#warning")
 
-function iniciarSesion(){
+const arrayDatos= [];
+
+function iniciarSesion(e){
+    e.preventDefault();
     uCuit=document.querySelector('#cuit').value;
     uContrasenia= document.querySelector('#password').value;
     acceso= validarUsuario(uCuit, uContrasenia)
@@ -23,18 +21,23 @@ function validarUsuario (){
       if( uCuit== arrayDatos[i].cuit && uContrasenia==arrayDatos[i].pass){
           window.location.href="registroDeBicicletas.html"
       } 
-      else{
-          console.log("datos incorrectos")
+      else if( uCuit!= arrayDatos[i].cuit && uContrasenia!=arrayDatos[i].pass){
+        warning.innerHTML= "<p>Alguno de los datos ingresados no son validos</p>"
       }
   }
 }
 button.addEventListener("click", iniciarSesion);  
 
 /* registro de usuario */
-const nuevoRegistro=[];
 
-function registrarUsuario (e) {
-    e.preventdefault();
-    const nuevoUsuario= new DatosUsuario(cuitRegistro, nombreRegistro, apellidoRegistro, correoRegistro)
-    push.arrayDatos(nuevoUsuario)
+function registrarUsuario(e){
+    e.preventDefault();
+    let cuitRegistro= document.querySelector("#cuit-registro").value;
+    let nombreRegistro= document.querySelector("#nombre-registro").value;
+    let passRegistro=document.querySelector("#pass-registro").value;
+    let correoRegistro=document.querySelector("#correo-registro").value;
+    let nuevoUsuario= new DatosUsuario(cuitRegistro, nombreRegistro, passRegistro, correoRegistro)
+    arrayDatos.push(nuevoUsuario);
 }
+btnRegistro.addEventListener("click", registrarUsuario);
+

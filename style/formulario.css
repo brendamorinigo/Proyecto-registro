@@ -10,9 +10,9 @@
 }
 
 body {
-    background: #4568DC;
-    background: -webkit-linear-gradient(to right, #edf1f3, #f0f1f3);
-    background: linear-gradient(to right, #8ce3f8, #5d81fa);
+    background: #dc4598;
+    background: -webkit-linear-gradient(to right, #edf1f3, #f3f0f0);
+    background: linear-gradient(to right, #8ce3f8, #5dfaf2);
     height: 750px;
     display: flex;
     justify-content: center;
@@ -25,16 +25,13 @@ h1{
 }
 
 form{
+    width: 30%;
+    height: 70%;
     background: #fff;
     padding: 40px 0;
     box-shadow: 0 0 6px 0 rgba(255, 255, 255, 0.8);
     border-radius: 10px;
-    margin: 10px;
-}
-
-.form{
-    width: 100%;
-    margin: auto;
+    margin: 10px ;
 }
 
 form .grupo{
@@ -53,7 +50,9 @@ input{
     border-bottom: 1px solid var(--colorTextos);
 }
 
-
+.form-registro{
+    display: none;
+}
 
 input:focus{ 
     outline: none;
@@ -98,31 +97,23 @@ input:focus~.barra::before{
     width: 100%;
 }
 
-.warnings{
-    width: 200px;
-    text-align: center;
-    margin: auto;
-    color: #f10808;
-    padding-top: 20px;
-}
-
 button{
-    background: #4568DC;
+    background: #dc45c8;
     background: -webkit-linear-gradient(to right, #4795fc, #f3f4f7);
     background: linear-gradient(to right, #3509f7, #050792);
     border: none;
     display: block;
     width: 80%;
-    margin: 10px auto;
     color: #fff;
     height: 40px;
     font-size: 16px;
     cursor: pointer;
+    margin: 0 auto;
 }
 
-@media screen and (max-width:500px){
-    form{
-        width: 80%;
-    }
+.warning{
+    text-align: center;
+    margin: 0 auto;
+    color: red ;
+    padding: 10px;
 }
-

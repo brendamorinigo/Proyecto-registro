@@ -1,7 +1,7 @@
 /* DOM/ VARIABLES*/
 const bici1= new DatosBici("PHILCO", "AMARIILO", 29, "ONCE")
 const seccionResultado= document.querySelector("#resultadoBuscador");
-const selectMarca= document.querySelector(".form-select");
+const selectMarca= document.querySelector("#selectMarca");
 const selectColor= document.querySelector("#selectColor");
 const selectRodado= document.querySelector("#selectRodado");
 const form= document.querySelector("#form");
@@ -21,11 +21,21 @@ selectMarca.addEventListener('change', ()=>{
 })
 
 selectColor.addEventListener('change', ()=>{
-  imprimirProductos(bicicletas.filter(elemento=>elemento.color== selectColor.value))
+  if(selectColor.value=='TODO'){
+    imprimirProductos(bicicletas)
+  }
+  else{
+    imprimirProductos(bicicletas.filter(elemento=>elemento.color== selectColor.value))
+  }
 })
 
 selectRodado.addEventListener('change', ()=>{
-  imprimirProductos(bicicletas.filter(elemento=>elemento.rodado== selectRodado.value))
+  if(selectRodado.value=='TODO'){
+    imprimirProductos(bicicletas)
+  }
+  else{
+    imprimirProductos(bicicletas.filter(elemento=>elemento.rodado== selectRodado.value))
+  }
 })
 
 /* ARRAY */
@@ -40,7 +50,7 @@ function cargarDatos(e){
   let rodadoIngresado= document.querySelector("#rodado-ingresado").value;
   let ubicacionIngresada= document.querySelector("#ubicacion-ingresada").value;
 
-  const nuevoRegistro= new DatosBici(marcaIngresada,colorIngresado,rodadoIngresado,ubicacionIngresada)
+  const nuevoRegistro= new DatosBici(marcaIngresada,colorIngresado,rodadoIngresado,ubicacionIngresada);
   bicicletas.push(nuevoRegistro)
   imprimirProductos(bicicletas)
 }
@@ -69,22 +79,7 @@ function imprimirProductos(array){
 
 imprimirProductos(bicicletas);
 
-/* AJAX */
 
-const URL= "http://api.weatherunlocked.com/api/current/ar.M5500HKA?lang=es&app_id=21da7596&app_key=e07917f396cb606b9370a612aba1cce4"
-
-$("body").prepend('<button id="btn1" class="btn-clima">Traer datos</button>');
-
-$("#btn1").click(()=>{
-    $.get(URL, function (respuesta, estado){
-        let dato= respuesta;
-          console.log(respuesta)
-          $("body").prepend(`<div class="clima">
-           <h3 class="titulo-clima">Temperatura actual: ${dato.temp_c}°C</h3>
-           <h3 class="titulo-clima">Humedad actual: ${dato.humid_pct}%</h3>
-           </div>`)
-    })
-}) 
 
 
 
