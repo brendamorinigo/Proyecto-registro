@@ -90,3 +90,14 @@ input:hover{
     display: flex;
     margin-left: 10px;
 }
+
+.datos{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.btn-submit{
+    margin: 10px;
+    background-color: rgb(193, 221, 243);
+}
