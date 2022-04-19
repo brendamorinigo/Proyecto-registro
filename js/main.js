@@ -8,9 +8,6 @@ const mostrarTodo= document.querySelector("#todo");
 const btnAñadir= document.querySelector("#btn-cargar");
 let numeroInicial= 82347;
 
-/* dom de filtro */
-
-
 /* eventos */
 
 btnAñadir.addEventListener('click', cargarDatos)
@@ -103,7 +100,7 @@ function imprimirProductos(array){
     }); 
 }
 
-let local= JSON.parse(localStorage.getItem("bicicletas")) ;
+let local= JSON.parse(localStorage.getItem("bicicletas"));
 
 local.forEach(dato => {
     let datos=document.querySelector("#resultadoLocalStorage");
@@ -122,5 +119,4 @@ local.forEach(dato => {
     </ul>
   </div>`;
     datos.appendChild(contenedor);
-
   }) 
